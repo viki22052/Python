@@ -2,12 +2,14 @@
 if __name__ == '__main__':
 
     str = input("Enter brackets sequence: ")
-    j = 0
+    #j = 0
     k = 0
 
     for i in range(len(str)):
 
-        if str[0] == ')':
+        if k < 0:
+            break
+        elif str[0] == ')':
             k = 1
             print('Incorrect!')
             break
@@ -18,9 +20,9 @@ if __name__ == '__main__':
         elif str[i] == '(':
             k+=1
         else:
-            j+=1
+            k-=1
             
-    if j == k:
+    if k == 0:
         print('Correct')
     else:
         print('Incorrect')
